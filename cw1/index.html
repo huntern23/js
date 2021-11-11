@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. Створити масив з 10 чисел (можна використовувати Math.random Та Math.floor). Скласти результат цих чисел в змінній result.
+    // 2. Створити об'єкт book з наступними полями  - назва, кількість сторінок, жанр
+    // 3. Створити об'єкт book з наступними полями  - назва, кількість сторінок, жанр, автори
+    // 4. Створити маис об'єктів book з наступними полями  - назва, кількість сторінок, жанр, автори. Вивести кожну книгу як окремий об'єкт
+    // 5. Напишіть код, який вираховує площу прямокутника висотою 23см. (змінна height) та шириною 10см (змінна width).
+    // Значення площі зберігати в змінній s.
+    // 6. Напиши код, який знаходить об'єм циліндра заввишки 10м (змінна heightC) та діаметром основи 4м (dC),
+    // результат помістіть у змінну v.
+    // 7. У прямокутного трикутника дві сторони n (зі значенням 3) та m (зі значенням 4).
+    // Знайдіть гіпотенузу k за теоремою Піфагора (потрібно використовувати функцію Math.pow (число, ступінь) або оператор зведення в ступінь **).
+
+
+    let arr = [1,2,3,4,5,6,7,8,9,10]; // масив з 10 чисел
+    let result = arr[0]+arr[1]+arr[2]+arr[3]+arr[4]+arr[5]+arr[6]+arr[7]+arr[8]+arr[9];
+    console.log(result);
+
+
+    let book1 = { //об’єкт book з наступними полями  - назва, кількість сторінок, жанр, автори
+        name: "a",
+        pages: 247,
+        genre: "genre1",
+        author: "author1"
+    }
+
+
+    let book2 = { //об’єкт
+        name: "b",
+        pages: 145,
+        genre: "genre2",
+        author: "author2"
+    }
+    let book3 = { //об’єкт
+        name: "c",
+        pages: 276,
+        genre: "genre3",
+        author: "author3"
+    }
+    let books =[book1, book2, book3]; //масив з об’єктами
+    console.log(books[0]); // виведення
+    console.log(books[1]);
+    console.log(books[2]);
+
+
+    let height = 23; // Площа прямокутника
+    let width = 10;
+    let s = height*width;
+    console.log(s);
+
+
+    let heightC = 10; // Об’єм циліндра
+    let dC = 4;
+    let radius = dC/2;
+    let PI = 3.14;
+    let v = heightC * Math.pow(radius,2) * PI;
+    console.log(v);
+
+
+    let n =3;
+    let m=4;
+    let k = Math.sqrt((Math.pow(n,2)+Math.pow(m,2)));
+    console.log(k);
+
+
+</script>
+</body>
+</html>
