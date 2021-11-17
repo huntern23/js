@@ -1,0 +1,23 @@
+.d-flex {
+    display: flex;
+}
+
+.border {
+    border: 2px solid silver;
+}
+
+.product_title {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.product_cart {
+    border: 2px solid silver;
+    width: 300px;
+}
+
+.product_image {
+    width: 300px;
+    margin: 0 auto;
+}
