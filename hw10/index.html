@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .menu {
+            background: silver;
+            min-height: 20px;
+        }
+
+        .collapse {
+            height: 0;
+            overflow: hidden;
+        }
+        .hide-body{
+            height: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="text">lorem</div>
+<button id="button1">hide text</button>
+<button id="button2">hide me</button>
+<hr>
+<form name="check_age">
+    <input type="number" name="userAge">
+    <button>check</button>
+</form>
+<ul class="menu">
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+    <li>item</li>
+</ul>
+<script>
+    // - Создать произвольный елемент с id = text.
+    // Используя JavaScript, сделайте так, чтобы при клике на кнопку исчезал элемент с id="text".
+    let button1 = document.getElementById('button1');
+    button1.onclick = function () {
+        let text1 = document.getElementById("text");
+        text1.style.display = 'none';
+    }
+    // - Создайте кнопку, при клике на которую, она будет скрывать сама себя.
+    let button2 = document.getElementById('button2');
+    button2.onclick = function () {
+        button2.style.display = 'none';
+    }
+
+    // - створити інпут який приймає вік людини та кнопку яка підтверджує дію.
+    // При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18,
+    // та повідомити про це користувача
+    let form = document.forms.check_age;
+    form.onsubmit = function (e) {
+        e.preventDefault();
+        if (+this.userAge.value < 18) {
+            alert('Ваш вік менший ніж 18!');
+        }
+    }
+
+    // - Создайте меню, которое раскрывается/сворачивается при клике
+    let menu = document.getElementsByClassName('menu')[0];
+    menu.onclick = function () {
+        this.classList.toggle('collapse')
+    }
+    // - Создать список комментариев , пример объекта коментария - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
+    //     Вывести список комментариев в документ, каждый в своем блоке.
+    //     Добавьте каждому комментарию по кнопке для сворачивания его body.
+
+    let comments = [{title: 'lorem1', body: 'lorem ipsum dolo sit ameti'},
+        {title: 'lorem2', body: 'lorem ipsum dolo sit ameti'},
+        {title: 'lorem3', body: 'lorem ipsum dolo sit ameti'},]
+    for (const comment of comments) {
+
+
+        let commentDiv = document.createElement('div');
+        commentDiv.classList.add('comment');
+        let title = document.createElement('h2');
+        title.innerText = comment.title;
+        let bodyComment = document.createElement('div');
+        bodyComment.innerText = comment.body;
+        let btn = document.createElement('button');
+        btn.innerText = 'hide comment';
+        btn.onclick = function (){
+            bodyComment.classList.toggle('hide-body');
+        }
+        commentDiv.append(title, bodyComment, btn);
+        document.body.appendChild(commentDiv)
+
+
+    }
+</script>
+</body>
+</html>
